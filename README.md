@@ -17,4 +17,4 @@ A clean, responsive weather application built with Angular and Bootstrap that di
 
 ## Live Demo
 
-Check out the live version of the app:
+Check out the live version of the app:https://angular-weather-app-rose.vercel.app/
