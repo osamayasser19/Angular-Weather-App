@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="border-0 shadow">
+        <div class="p-4">
+          @if(weather()){
+          <div class="mb-4">
+            <h3 class="mb-1">{{ weather().location["name"] }}</h3>
+            <p class="text-muted mb-0">
+              {{ weather().location["region"] }} -
+              {{ weather().location["country"] }}
+            </p>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div>
+                <span class="display-4">{{ weather().current["temp_c"] }}</span>
+                <span class="fs-5 align-top">°C</span>
+              </div>
+              <span class="display-4">|</span>
+              <div>
+                <span class="display-4">{{ weather().current["temp_f"] }}</span>
+                <span class="fs-5 align-top">°F</span>
+              </div>
+            </div>
+
+            <div class="text-end">
+              <img
+                [src]="weather().current.condition.icon"
+                alt="icon"
+                class="mb-2"
+              />
+              <p class="mb-0 display-6">
+                {{ weather().current.condition["text"] }}
+              </p>
+            </div>
+          </div>
+          } @else{
+          <div class="text-center">
+            <span class="display-5 text-muted fw-normal">Start Searching</span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
